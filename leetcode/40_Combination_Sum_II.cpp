@@ -4,31 +4,30 @@ using namespace std;
 class Solution {
     public:
         vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+            sort(candidates.begin(), candidates.end());
             vector<vector<int>> ans;
             vector<int> ds;
-            findingSet(0, ds, 0, ans, candidates, target);
+            findingSet(0, ds, ans, candidates, target);
             return ans;
         }
     
     private:
-        void findingSet(int index, vector<int>& ds, int sum, vector<vector<int>>& ans, vector<int>& candidates, int target)
+        void findingSet(int index, vector<int>& ds, vector<vector<int>>& ans, vector<int>& candidates, int target)
         {
-            if(sum > target) return;
-            if(index == candidates.size())
-            {
-                if(sum == target)
-                {
-                    ans.push_back(ds);
-                }
+           if(target == 0)
+           {
+                ans.push_back(ds);
                 return;
-            }
+           }
 
-            sum = sum + candidates[index];
-            ds.push_back(candidates[index]);
-            findingSet(index + 1, ds, sum, ans, candidates, target);
+           for(int i = index; i < candidates.size(); i++)
+           {
+                if(i > index && candidates[i] == candidates[i - 1]) continue;
+                if(target < candidates[i]) break;
 
-            sum = sum - candidates[index];
-            ds.pop_back();
-            findingSet(index + 1, ds, sum, ans, candidates, target);
+                ds.push_back(candidates[i]);
+                findingSet(i + 1, ds, ans, candidates, target - candidates[i]);
+                ds.pop_back();
+           }
         }
     };
