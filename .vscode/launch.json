@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/daksh/Desktop/CP/Take_You_Forward/Geeks_for_geeks",
-      "program": "c:/Users/daksh/Desktop/CP/Take_You_Forward/Geeks_for_geeks/build/Debug/outDebug",
+      "cwd": "c:/Users/daksh/Desktop/CP/Take_You_Forward/leetcode",
+      "program": "c:/Users/daksh/Desktop/CP/Take_You_Forward/leetcode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
