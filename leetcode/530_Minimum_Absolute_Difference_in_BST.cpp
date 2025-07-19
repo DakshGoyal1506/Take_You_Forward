@@ -39,36 +39,3 @@ class Solution {
             
         }
     };
-
-// class Solution {
-
-//     private:
-//         void helper(TreeNode* root, int& ans)
-//         {
-//             if(root->left == nullptr && root->right == nullptr) return ;
-
-//             int right = 0, left = 0;
-//             int val = root->val;
-
-//             if(root->left)
-//             {
-//                 left = root->left->val;
-//                 helper(root->left, ans);
-//             }
-//             if(root->right)
-//             {
-//                 right = root->right->val;
-//                 helper(root->right, ans);
-//             }
-
-//             ans = min({ans, val - left, abs(right - val)});
-//             return;
-//         }
-//     public:
-//         int minDiffInBST(TreeNode* root) {
-            
-//             int ans = INT_MAX;  
-//             helper(root, ans);
-//             return ans;
-//         }
-//     };
