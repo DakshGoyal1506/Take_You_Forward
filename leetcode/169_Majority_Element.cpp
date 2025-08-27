@@ -11,32 +11,39 @@ public:
 
         int n = nums.size();
         unordered_map<int, int> count;
-        int max = -1;
-        int ans = -1;
 
-        for(int i = 0; i < n; i++)
+        for(int x : nums)
         {
-            if(count.find(nums[i]) != count.end())
-            {
-                count[nums[i]] = count[nums[i]] + 1;
-                if(max < count[nums[i]])
-                {
-                    max = count[nums[i]];
-                    ans = nums[i];
-                }
-            }
-            else
-            {
-                count[nums[i]] = 1;
-                if(max < count[nums[i]])
-                {
-                    max = count[nums[i]];
-                    ans = nums[i];
-                }
-            }
+            count[x] ++;
+            if(count[x] > n / 2) return x;
         }
+        return -1;
+        // int max = -1;
+        // int ans = -1;
 
-        return ans;
+        // for(int i = 0; i < n; i++)
+        // {
+        //     if(count.find(nums[i]) != count.end())
+        //     {
+        //         count[nums[i]] = count[nums[i]] + 1;
+        //         if(max < count[nums[i]])
+        //         {
+        //             max = count[nums[i]];
+        //             ans = nums[i];
+        //         }
+        //     }
+        //     else
+        //     {
+        //         count[nums[i]] = 1;
+        //         if(max < count[nums[i]])
+        //         {
+        //             max = count[nums[i]];
+        //             ans = nums[i];
+        //         }
+        //     }
+        // }
+
+        // return ans;
         
     }
 };
