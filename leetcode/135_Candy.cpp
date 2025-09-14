@@ -1,6 +1,54 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// class Solution {
+//     public:
+//         int candy(vector<int>& ratings) {
+
+//             int val = 1;
+//             int n = ratings.size();
+
+//             vector<int> left(n, 1), right(n,1);
+
+//             for(int i = 1; i < n; i++)
+//             {
+//                 if(ratings[i] > ratings[i-1])
+//                 {
+//                     val++;
+//                 }
+//                 else
+//                 {
+//                     val = 1;
+//                 }
+//                 left[i] = val;
+//             }
+
+//             val = 1;
+
+//             for(int i = n - 2; i >= 0; i--)
+//             {
+//                 if(ratings[i] > ratings[i+1])
+//                 {
+//                     val++;
+//                 }
+//                 else 
+//                 {
+//                     val = 1;
+//                 }
+//                 right[i] = val;
+//             }
+
+//             int ans = 0;
+
+//             for(int i = 0; i < n; i++)
+//             {
+//                 ans = ans + max(left[i], right[i]);
+//             }
+
+//             return ans;
+//         }
+//     };
+
 class Solution {
     public:
         int candy(vector<int>& ratings) {
